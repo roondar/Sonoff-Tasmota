@@ -10,6 +10,15 @@
   - Webserverpages and MQTT with TLS can rise memory problems because of amount of contend. Disable MQTT temporary
   - Configuration of PCF8574 not supported though MQTT or COMMAND. ONLY web.
   
+ Troubleshooting:
+  - Wire up SDA and SCL accordingly
+  - Enable PCF8574 by uncomment in user_cofig.h the #define USE_PCF8574
+  - In the INFO Serial LOG you should see if the board is started
+   00:00:00 RSLT: pcf8574 2 boards
+   00:00:00 RSLT: Final max devices: 
+   if not, use Command I2CSCAN. Board with Address 0x38 should be there. If not wire is wrong
+   - Configure your relays in: CONFIGURATION -> CONFIGURE I2C/PCF8574 
+  
 ## 4.1.3a
 - Added support for 4 channel A/D converter ADS1115
 - Changes MQTT Heap and WEBSERVER HEAP from kByte to Byte
